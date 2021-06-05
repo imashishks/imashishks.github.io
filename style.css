@@ -3,9 +3,9 @@ body{
     overflow:hidden;
     
 }
-/* * {
+* {
     cursor: none;
-    } */
+    }
 .memoji{
     position: absolute;
     width:250px;
@@ -40,7 +40,7 @@ footer{
 }
 .email{
     position:fixed;
-    bottom:10px;
+    top:10px;
     right:0;
     writing-mode: vertical-rl;
 }
