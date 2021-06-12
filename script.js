@@ -5,9 +5,11 @@ function handleMouseMove(event) {
         var returnedFunction = debounce(function() {
             setElePosition(event.pageX,event.pageY);
         }, 100);
-      
-        returnedFunction();
-        throttleSrcChange();
+        if(!mobileCheck()){
+            returnedFunction();
+            throttleSrcChange();
+        }
+       
 }
 var throttleSrcChange = throttle(setEleSrc, 300);
 function setEleSrc(){
