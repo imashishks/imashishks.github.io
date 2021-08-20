@@ -1,26 +1,34 @@
-
+let updateScale = true;
 function handleMouseMove(event) {
         var eventDoc, doc, body;
         event = event || window.event; 
         var returnedFunction = debounce(function() {
             setElePosition(event.pageX,event.pageY);
+            setBoundsforCursor(event.pageX,event.pageY);
         }, 100);
       
         returnedFunction();
         throttleSrcChange();
+        if(updateScale){
+            document.querySelector('.memoji-float').style.transform ="scale(1)";
+            updateScale = false;
+        }
+        
 }
 var throttleSrcChange = throttle(setEleSrc, 300);
 function setEleSrc(){
-    var img = document.querySelector('.memoji');
+    // var img = document.querySelector('.memoji-float');
+    // const randomNum = Math.floor(Math.random()*10);
+    // img.src= `./assets/images/${randomNum}.png`;
+    var ele = document.querySelector('.memoji-float');
     const randomNum = Math.floor(Math.random()*10);
-    img.src= `./assets/images/${randomNum}.png`;
+    ele.style.backgroundImage= "url('./assets/images/"+randomNum+".png')";
 }
 
 function setElePosition(x,y){
-    var img = document.querySelector('.memoji');
-    img.style.position = 'absolute';
-    img.style.top = (y - 100) +'px';
-    img.style.left = (x -100) +'px';  
+    var ele = document.querySelector('.memoji-float');
+    ele.style.top = (y - 90) +'px';
+    ele.style.left = (x -90) +'px';  
 }
 
 function debounce(func, wait, immediate) {
@@ -78,8 +86,13 @@ let intervalId;
 //     }
 // }
 const touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.documentElement);
-
-    intervalId= setInterval(setEleSrc,1000);
+if(touchDevice){
+    intervalId = setInterval(setEleSrc,1000);
+}else{
+   
+    document.onmousemove = handleMouseMove;
+}
+    
 
 
 
@@ -90,10 +103,6 @@ const touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.docu
 const inputEl = document.querySelector(".toggle");
 // Listen for a click on the button
 inputEl.addEventListener("click", function() {
-    // document.querySelector('#text-path').style.display = 'block';
-    // setTimeout(()=>{
-    //     document.querySelector('#text-path').style.display = 'none';
-    // },2000);
     document.querySelector('#animation-path').beginElement();
     document.querySelector('#animation-opacity').beginElement();
   document.body.classList.toggle("dark-theme");
@@ -109,14 +118,19 @@ inputEl.addEventListener("click", function() {
 });
 
 
-const textPath = document.querySelector('#text-path');
-// var path = document.querySelector( textPath.getAttribute('href') );
-
-// var pathLength = path.getTotalLength();
-// console.log(pathLength);
-
-// function updateTextPathOffset(offset){
-//     textPath.setAttribute('startOffset', offset); 
-// }
-  
-// updateTextPathOffset(pathLength);
+function setBoundsforCursor(x,y){
+    const dimensions = document.querySelector('.toggle-mode').getBoundingClientRect();
+    console.log(window.innerWidth,x,y);
+    var coordinates = {
+        x:window.innerWidth - 200,
+        y:0,
+        x1: window.innerWidth,
+        y1: 200
+    }
+    var ele = document.querySelector('.memoji-float');
+    if(x > coordinates.x && x < coordinates.x1 && y > coordinates.y && y < coordinates.y1){
+        ele.classList.add('cursor-circle');
+    }else{
+        ele.classList.remove('cursor-circle');
+    }
+}
