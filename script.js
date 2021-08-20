@@ -56,33 +56,56 @@ function throttle ( func,delay){
 function setMode(){
     const toggle = document.querySelector('.toggle');
     const hours = new Date().getHours();
-    toggle.checked = hours > 7 && hours < 20;
+    if(hours > 7 && hours < 20){
+        toggle.checked = false;
+        toggle.setAttribute("title","Turn off the light");
+    }else{
+        toggle.checked = true;
+        document.body.classList.add("dark-theme");
+        toggle.setAttribute("title","Turn on the light");
+        
+        
+    }
+    
 }
 setMode();
 
 let intervalId;
-window.onresize = function(){
-    clearInterval(intervalId);
-    if(touchDevice){
-        intervalId= setInterval(setEleSrc,500);
-    }
-}
-const touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.documentElement);
-// if(touchDevice){
-    intervalId= setInterval(setEleSrc,1000);
-// }else{
-    // document.onmousemove = handleMouseMove;
+// window.onresize = function(){
+//     clearInterval(intervalId);
+//     if(touchDevice){
+//         intervalId= setInterval(setEleSrc,500);
+//     }
 // }
+const touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.documentElement);
+
+    intervalId= setInterval(setEleSrc,1000);
+
 
 
 
 //toggle click
 
 const inputEl = document.querySelector(".toggle");
- 
 // Listen for a click on the button
 inputEl.addEventListener("click", function() {
-    console.log('asdasd');
-  // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains('dark-theme')){
+    toggle.setAttribute("title","Turn on the light");
+    }else{
+    toggle.setAttribute("title","Turn off the light");
+}
 });
+
+
+const textPath = document.querySelector('#text-path');
+// var path = document.querySelector( textPath.getAttribute('href') );
+
+// var pathLength = path.getTotalLength();
+// console.log(pathLength);
+
+// function updateTextPathOffset(offset){
+//     textPath.setAttribute('startOffset', offset); 
+// }
+  
+// updateTextPathOffset(pathLength);
