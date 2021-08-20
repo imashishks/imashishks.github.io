@@ -1,4 +1,4 @@
-document.onmousemove = handleMouseMove;
+
 function handleMouseMove(event) {
         var eventDoc, doc, body;
         event = event || window.event; 
@@ -18,6 +18,7 @@ function setEleSrc(){
 
 function setElePosition(x,y){
     var img = document.querySelector('.memoji');
+    img.style.position = 'absolute';
     img.style.top = (y - 100) +'px';
     img.style.left = (x -100) +'px';  
 }
@@ -49,3 +50,39 @@ function throttle ( func,delay){
         func(args);
     }
 }
+
+
+
+function setMode(){
+    const toggle = document.querySelector('.toggle');
+    const hours = new Date().getHours();
+    toggle.checked = hours > 7 && hours < 20;
+}
+setMode();
+
+let intervalId;
+window.onresize = function(){
+    clearInterval(intervalId);
+    if(touchDevice){
+        intervalId= setInterval(setEleSrc,500);
+    }
+}
+const touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.documentElement);
+// if(touchDevice){
+    intervalId= setInterval(setEleSrc,1000);
+// }else{
+    // document.onmousemove = handleMouseMove;
+// }
+
+
+
+//toggle click
+
+const inputEl = document.querySelector(".toggle");
+ 
+// Listen for a click on the button
+inputEl.addEventListener("click", function() {
+    console.log('asdasd');
+  // Then toggle (add/remove) the .dark-theme class to the body
+  document.body.classList.toggle("dark-theme");
+});

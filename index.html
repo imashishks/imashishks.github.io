@@ -3,27 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86">
     <title>Ashish Kumar</title>
     <link rel="stylesheet" href="style.css"/>
-    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
 </head>
 <body>
+    
     <div class="header-container">
+        <img class="memoji" src='assets/images/1.png'/>
         <h1 class="primary-header">Hello World!</h1>
         <h3 class="secondary-header">I am Ashish Kumar</h3>
+        <p class='email'>sayhitoak@gmail.com</p>
     </div>
-    
-    <img class="memoji" src='assets/images/1.png'/>
-    <footer>
+    <div class="toggle-mode">
+        <input id="toggle" class="toggle" type="checkbox">
+    </div>
+    <svg id="text-container" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
+        <path id="text-curve" d="M0 100s269.931 86.612 520 0c250.069-86.612 480 0 480 0" fill="none"/>
+        
+        <text y="40" font-size="32">
+          <textPath id="text-path" href="#text-curve" startOffset="200">
+            * Keyframers really know animation.
+          </textPath>
+        </text>
+      </svg>
+    <!-- <footer>
         <p class='footer-msg'>
-            Currently busy building something cool for this space.Visit back soon !
-             
+            Currently busy building something cool for this space.Visit back soon !     
         </p>
-        <p class='email'>
-         sayhitoak@gmail.com
-        </p>
-    </footer>
+    </footer> -->
    
 </body>
 </html>
