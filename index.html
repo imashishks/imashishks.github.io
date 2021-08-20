@@ -23,12 +23,13 @@
     <svg id="text-container" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
         <path id="text-curve" d="M0 100s269.931 86.612 520 0c250.069-86.612 480 0 480 0" fill="none"/>
         
-        <text y="40" font-size="32">
+        <text id="text" y="40" font-size="32" opacity="0">
           <textPath id="text-path" href="#text-curve" startOffset="0%">
             Andhera kayam rahe
-            <animate attributeName="startOffset" from="100%" to ="0%" begin="0s" dur="2s" repeatCount="indefinite"/>
+            <animate id="animation-path" attributeName="startOffset" from="100%" to ="0%"  dur="2s" begin="indefinite"/>
+            
           </textPath>
-         
+          <animate id="animation-opacity" attributeName="opacity" from="1" to ="0"  dur="2s" begin="indefinite" />
         </text>
       </svg>
     <!-- <footer>

@@ -8,7 +8,6 @@ body {
     font-family: 'Urbanist', sans-serif;
     --text-color: #222;
     --bkg-color: #fff;
-    --anchor-color: #0033cc;
     color: var(--text-color);
     background: var(--bkg-color);
     transition: all 500ms;
@@ -17,7 +16,6 @@ body {
 body.dark-theme {
     --text-color: #eee;
     --bkg-color: #121212;
-    --anchor-color: #809fff;
 }
 
 
@@ -136,14 +134,14 @@ footer{
   #text-container{
     position: absolute;
     top: 70px;
-    animation: vanish 2s infinite ease-in;
+    /* animation: vanish 2s infinite ease-in; */
   }
 
-  @keyframes vanish{
+  /* @keyframes vanish{
     from {
         opacity: 1;
     }
     to{
         opacity: 0;
     }
-  }
+  } */

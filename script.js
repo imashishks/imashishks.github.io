@@ -86,14 +86,25 @@ const touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.docu
 
 //toggle click
 
+// document.querySelector('#text-path').style.display = 'none';
 const inputEl = document.querySelector(".toggle");
 // Listen for a click on the button
 inputEl.addEventListener("click", function() {
+    // document.querySelector('#text-path').style.display = 'block';
+    // setTimeout(()=>{
+    //     document.querySelector('#text-path').style.display = 'none';
+    // },2000);
+    document.querySelector('#animation-path').beginElement();
+    document.querySelector('#animation-opacity').beginElement();
   document.body.classList.toggle("dark-theme");
+  console.log(document.getElementById("text-path").childNodes);
   if(document.body.classList.contains('dark-theme')){
     toggle.setAttribute("title","Turn on the light");
+    document.getElementById("text-path").childNodes[0].textContent = "Andhera kayam rahe ";
     }else{
     toggle.setAttribute("title","Turn off the light");
+    document.getElementById("text-path").childNodes[0].textContent = "Jab jago tab savera";
+   
 }
 });
 
