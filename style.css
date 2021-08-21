@@ -1,7 +1,7 @@
 
 html, body {
     margin:0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 body {
     position: relative;
@@ -11,7 +11,7 @@ body {
     color: var(--text-color);
     background: var(--bkg-color);
     transition: all 500ms;
-    cursor: none;
+    /* cursor: none; */
 }
 
 body.dark-theme {
@@ -165,4 +165,77 @@ footer{
     position: absolute;
     top: 90px;
    
+  }
+  .main-circle{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    border-radius: 50%;
+    background: var(--text-color);
+    opacity: 0.1;
+    left: 60%;
+    top: 20%;
+    transform: translate(-50%,-50%) scale(1);
+    transition: all 1s;
+    animation: translate-hor 5s infinite;
+  }
+  .main-circle:hover{
+    transform: translate(-50%,-50%) scale(1.2);
+  }
+
+  @keyframes translate-hor {
+      0%{
+        transform: translate(-45%,-50%) scale(1);
+      }
+      50%{
+        transform: translate(-55%,-50%) scale(1);
+      }
+      100%{
+        transform: translate(-45%,-50%) scale(1);
+      }
+  }
+  @keyframes translate-ver {
+    0%{
+      transform: translate(-50%,-45%) scale(1);
+    }
+    50%{
+      transform: translate(-50%,-50%) scale(1);
+    }
+    100%{
+      transform: translate(-50%,-45%) scale(1);
+    }
+}
+
+
+  /** about */
+
+  .about-section{
+      padding: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+  }
+  .about-img{
+      width: 25rem;
+      position: relative;
+  }
+  .about-desc-section{
+      display: flex;
+      justify-content: flex-end;
+    
+  }
+  .about-desc{
+      margin: 70px;
+      width: 70%;
+  }
+  .about-circle{
+    width: 300px;
+    border-radius: 50%;
+    top: 20%;
+    left: 40%;
+    height: 300px;
+    position: absolute;
+    border: 1px solid var(--text-color);
+    animation: translate-ver 5s infinite;
   }

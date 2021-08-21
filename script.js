@@ -90,7 +90,7 @@ if(touchDevice){
     },1000);
 }else{
    
-    document.onmousemove = handleMouseMove;
+    // document.onmousemove = handleMouseMove;
 }
     
 
@@ -122,10 +122,10 @@ function setBoundsforCursor(x,y){
     const dimensions = document.querySelector('.toggle-mode').getBoundingClientRect();
     console.log(window.innerWidth,x,y);
     var coordinates = {
-        x:window.innerWidth - 200,
+        x:window.innerWidth - 100,
         y:0,
         x1: window.innerWidth,
-        y1: 200
+        y1: 100
     }
     var ele = document.querySelector('.memoji-float');
     if(x > coordinates.x && x < coordinates.x1 && y > coordinates.y && y < coordinates.y1){
