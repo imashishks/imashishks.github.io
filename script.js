@@ -79,15 +79,15 @@ function setMode(){
 setMode();
 
 let intervalId;
-// window.onresize = function(){
-//     clearInterval(intervalId);
-//     if(touchDevice){
-//         intervalId= setInterval(setEleSrc,500);
-//     }
-// }
+
 const touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.documentElement);
 if(touchDevice){
-    intervalId = setInterval(setEleSrc,1000);
+
+    intervalId = setInterval(()=>{
+        const  img = document.querySelector('.memoji');
+        const randomNum = Math.floor(Math.random()*10);
+        img.src= `./assets/images/${randomNum}.png`;
+    },1000);
 }else{
    
     document.onmousemove = handleMouseMove;
