@@ -11,7 +11,7 @@ body {
     color: var(--text-color);
     background: var(--bkg-color);
     transition: all 500ms;
-    /* cursor: none; */
+    cursor: none;
 }
 
 body.dark-theme {
