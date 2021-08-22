@@ -90,7 +90,7 @@ if(touchDevice){
     },1000);
 }else{
    
-    // document.onmousemove = handleMouseMove;
+    document.onmousemove = handleMouseMove;
 }
     
 
