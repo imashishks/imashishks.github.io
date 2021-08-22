@@ -176,7 +176,7 @@ footer{
     left: 60%;
     top: 20%;
     transform: translate(-50%,-50%) scale(1);
-    transition: all 1s;
+    transition: transform 1s;
     animation: translate-hor 5s infinite;
   }
   .main-circle:hover{
