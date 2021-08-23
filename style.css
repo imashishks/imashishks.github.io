@@ -215,6 +215,8 @@ footer{
       align-items: center;
       justify-content: space-around;
       position: relative;
+      width: 70%;
+      margin: auto;
   }
   .about-img{
       width: 25rem;
@@ -226,9 +228,10 @@ footer{
     
   }
   .about-desc{
-      margin: 70px;
-      width: 70%;
+      margin: 40px;
+      width: 100%;
   }
+  
   .about-circle{
     width: 300px;
     border-radius: 50%;
