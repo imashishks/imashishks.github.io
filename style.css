@@ -151,31 +151,30 @@ footer{
    
   }
   .main-circle{
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     position: absolute;
     border-radius: 50%;
     background: var(--text-color);
-    opacity: 0.1;
-    left: 50%;
-    top: 20%;
+    opacity: 0.2;
+    top: 10%;
     transform: translate(-50%,-50%) scale(1);
     transition: transform 1s;
-    animation: translate-hor 5s infinite;
+    animation: scale 5s infinite;
   }
   .main-circle:hover{
     transform: translate(-50%,-50%) scale(1.2);
   }
 
-  @keyframes translate-hor {
+  @keyframes scale {
       0%{
-        transform: translate(-45%,-50%) scale(1);
+        transform:  scale(1.2);
       }
       50%{
-        transform: translate(-55%,-50%) scale(1);
+        transform:scale(1);
       }
       100%{
-        transform: translate(-45%,-50%) scale(1);
+        transform:  scale(1.2);
       }
   }
   @keyframes translate-ver {
