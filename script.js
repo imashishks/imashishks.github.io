@@ -138,7 +138,7 @@ function preloadImages(){
     for(let i = 0; i < 10; i++){
         const img = document.createElement("img");
         img.setAttribute("src", "./assets/images/" + (i)+".png" );
-        document.getElementById("#invisible").appendChild(img);
+        document.getElementById("invisible").appendChild(img);
     }
   
 }
