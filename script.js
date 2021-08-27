@@ -106,7 +106,6 @@ inputEl.addEventListener("click", function() {
     document.querySelector('#animation-path').beginElement();
     document.querySelector('#animation-opacity').beginElement();
   document.body.classList.toggle("dark-theme");
-  console.log(document.getElementById("text-path").childNodes);
   if(document.body.classList.contains('dark-theme')){
     toggle.setAttribute("title","Turn on the light");
     document.getElementById("text-path").childNodes[0].textContent = "Andhera kayam rahe ";
@@ -120,7 +119,6 @@ inputEl.addEventListener("click", function() {
 
 function setBoundsforCursor(x,y){
     const dimensions = document.querySelector('.toggle-mode').getBoundingClientRect();
-    console.log(window.innerWidth,x,y);
     var coordinates = {
         x:window.innerWidth - 100,
         y:0,
@@ -134,3 +132,14 @@ function setBoundsforCursor(x,y){
         ele.classList.remove('cursor-circle');
     }
 }
+
+function preloadImages(){
+    // pre - loading images
+    for(let i = 0; i < 10; i++){
+        const img = document.createElement("img");
+        img.setAttribute("src", "./assets/images/" + (i)+".png" );
+        document.getElementById("#invisible").appendChild(img);
+    }
+  
+}
+preloadImages();
