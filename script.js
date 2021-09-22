@@ -143,3 +143,9 @@ function preloadImages(){
   
 }
 preloadImages();
+
+const scribbleWave = document.querySelector("#scribble-wave");
+window.onscroll = function(){
+    const {scrollTop} = document.documentElement;
+    scribbleWave.setAttribute("stroke-dashoffset",3240 - scrollTop * 5); 
+}

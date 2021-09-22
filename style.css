@@ -204,6 +204,7 @@ footer{
   .about-img{
       width: 20rem;
       position: relative;
+      z-index: 99;
   }
   .about-desc-section{
       display: flex;
@@ -224,6 +225,13 @@ footer{
     position: absolute;
     border: 1px solid var(--text-color);
     animation: translate-ver 5s infinite;
+  }
+  .transitionwave {
+    position: absolute;
+    top: 12px;
+    width: 71%;
+    left: 53%;
+    transform: translateX(-50%);
   }
 
   @media screen and (min-width:728px) {
@@ -254,9 +262,15 @@ footer{
     .about-img{
       width: 20rem;
     }
+    .transitionwave {
+        top: 200px;
+    }
 
 }
 
 footer p{
   font-size: 12px;
+}
+#scribble-wave{
+  stroke: var(--text-color);
 }
