@@ -228,9 +228,9 @@ footer{
   }
   .transitionwave {
     position: absolute;
-    top: 12px;
-    width: 71%;
-    left: 53%;
+    top: 4%;
+    width: 119%;
+    left: 70%;
     transform: translateX(-50%);
   }
 
