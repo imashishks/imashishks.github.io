@@ -264,6 +264,8 @@ footer{
     }
     .transitionwave {
         top: 200px;
+        width: 70%;
+        left:50%;
     }
 
 }
